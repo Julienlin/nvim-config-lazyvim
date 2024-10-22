@@ -106,7 +106,7 @@ return {
           return true
         end,
         -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
+        ["*"] = function(server, opts) end,
       },
     },
   },
