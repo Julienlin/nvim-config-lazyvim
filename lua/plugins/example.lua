@@ -160,7 +160,11 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
+      table.insert(opts.sections.lualine_x, {
+        function()
+          return "😄"
+        end,
+      })
     end,
   },
 
