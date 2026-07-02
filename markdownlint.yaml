@@ -1,0 +1,3 @@
+# Shared markdownlint config used by nvim (see lua/plugins/markdown.lua).
+# Disable MD013 (line-length).
+MD013: false
