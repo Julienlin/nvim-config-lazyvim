@@ -14,6 +14,14 @@ return {
           typescript = {
             tsserver = {
               maxTsServerMemory = 4096
+            },
+            format = {
+              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false
+            }
+          },
+          javascript = {
+            format = {
+              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false
             }
           }
         }
