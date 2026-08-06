@@ -50,7 +50,9 @@ return {
             },
             preferences = {
               -- don't eagerly index every dependency's package.json for auto-imports
-              includePackageJsonAutoImports = "off"
+              includePackageJsonAutoImports = "off",
+              -- auto-imports use absolute paths (baseUrl/paths) instead of relative ones
+              importModuleSpecifier = "non-relative"
             },
             format = {
               insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false
