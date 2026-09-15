@@ -1,6 +1,17 @@
 return {
   {
     "natecraddock/workspaces.nvim",
+    cmd = {
+      "WorkspacesAdd",
+      "WorkspacesAddDir",
+      "WorkspacesList",
+      "WorkspacesListDirs",
+      "WorkspacesOpen",
+      "WorkspacesRemove",
+      "WorkspacesRemoveDir",
+      "WorkspacesRename",
+      "WorkspacesSyncDirs",
+    },
     opts = {
       -- path to a file to store workspaces data in
       -- on a unix system this would be ~/.local/share/nvim/workspaces
@@ -44,7 +55,11 @@ return {
         remove = {},
         rename = {},
         open_pre = {},
-        open = { "Telescope find_files" },
+        open = {
+          function()
+            Snacks.picker.files()
+          end,
+        },
       },
     },
   },

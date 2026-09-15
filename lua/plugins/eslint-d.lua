@@ -21,7 +21,8 @@ return {
           condition = function()
             return vim.g.eslint_backend == "eslint_d"
           end,
-          -- appended after the default args; a function arg must always return a
+          -- prepended before the default args (LazyVim's nvim-lint config does a
+          -- list_prepend, not an append); a function arg must always return a
           -- string (nil would corrupt the arg list), hence the harmless fallback
           prepend_args = {
             function()
