@@ -1,7 +1,17 @@
 return {
   {
     "natecraddock/workspaces.nvim",
-    cmd = { "WorkspacesAdd", "WorkspacesList", "WorkspacesOpen", "WorkspacesRemove", "WorkspacesRename" },
+    cmd = {
+      "WorkspacesAdd",
+      "WorkspacesAddDir",
+      "WorkspacesList",
+      "WorkspacesListDirs",
+      "WorkspacesOpen",
+      "WorkspacesRemove",
+      "WorkspacesRemoveDir",
+      "WorkspacesRename",
+      "WorkspacesSyncDirs",
+    },
     opts = {
       -- path to a file to store workspaces data in
       -- on a unix system this would be ~/.local/share/nvim/workspaces
