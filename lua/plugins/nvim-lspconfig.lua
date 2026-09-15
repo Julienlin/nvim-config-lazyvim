@@ -46,22 +46,22 @@ return {
             tsserver = {
               -- large monorepos need more than the 3GB default; too low a cap makes
               -- tsserver OOM and restart in a loop
-              maxTsServerMemory = 8192
+              maxTsServerMemory = 8192,
             },
             preferences = {
               -- don't eagerly index every dependency's package.json for auto-imports
               includePackageJsonAutoImports = "off",
               -- auto-imports use absolute paths (baseUrl/paths) instead of relative ones
-              importModuleSpecifier = "non-relative"
+              importModuleSpecifier = "non-relative",
             },
             format = {
-              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false
-            }
+              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+            },
           },
           javascript = {
             format = {
-              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false
-            }
+              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+            },
           },
           vtsls = {
             experimental = {
@@ -73,8 +73,8 @@ return {
               },
             },
           },
-        }
-      }
+        },
+      },
     },
   },
 }
