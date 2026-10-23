@@ -84,40 +84,20 @@ return {
           end
         end,
       },
-      vtsls = {
+      tsc = {
+        -- replacing nvim-lspconfig's root_dir also skips its node_modules/.bin binary
+        -- lookup: the server then runs `tsc` from $PATH (Mason's TypeScript 7)
         root_dir = function(bufnr, on_dir)
           on_dir(js_project_root(bufnr) or vim.fn.getcwd())
         end,
         settings = {
-          typescript = {
-            tsserver = {
-              -- large monorepos need more than the 3GB default; too low a cap makes
-              -- tsserver OOM and restart in a loop
-              maxTsServerMemory = 8192,
-            },
+          ["js/ts"] = {
             preferences = {
-              -- don't eagerly index every dependency's package.json for auto-imports
-              includePackageJsonAutoImports = "off",
               -- auto-imports use absolute paths (baseUrl/paths) instead of relative ones
               importModuleSpecifier = "non-relative",
             },
             format = {
               insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
-            },
-          },
-          javascript = {
-            format = {
-              insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
-            },
-          },
-          vtsls = {
-            experimental = {
-              completion = {
-                -- filter completions server-side instead of shipping 10k+ entries
-                -- to the client on each keystroke
-                enableServerSideFuzzyMatch = true,
-                entriesLimit = 75,
-              },
             },
           },
         },
