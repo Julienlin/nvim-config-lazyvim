@@ -11,3 +11,8 @@ vim.g.lazyvim_prettier_needs_config = true
 -- ESLint backend: "lsp" (eslint language server) or "eslint_d" (daemon via nvim-lint)
 -- toggle with <leader>ue
 vim.g.eslint_backend = "lsp"
+
+-- OS clipboard only when a graphical session is present, so the config also works over SSH and on headless machines
+if vim.env.SSH_TTY == nil and (vim.env.WAYLAND_DISPLAY or vim.env.DISPLAY) then
+  vim.opt.clipboard = "unnamedplus"
+end
