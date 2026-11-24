@@ -1,7 +1,8 @@
 return {
   "folke/tokyonight.nvim",
   opts = {
-    style = "day",
+    style = "moon", -- used when 'background' is dark
+    light_style = "day", -- used when 'background' is light
     --  transparent = true,
     --   styles = {
     --     sidebars = "transparent",
